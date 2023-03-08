@@ -27,7 +27,7 @@ SECRET_KEY = '%)bf8!6=yri%+h(*0&(wy)@d^%c3=c%gt%4=hx!!=hb8#+s5=5'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['207.154.246.154']
 
 
 # Application definition
@@ -82,8 +82,12 @@ WSGI_APPLICATION = 'onlinexam.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'namuna',
+        'USER': 'sodiq',
+        'PASSWORD': 'sodiq',
+        'HOST': 'localhost',
+        'PORT': '',
     }
 }
 
