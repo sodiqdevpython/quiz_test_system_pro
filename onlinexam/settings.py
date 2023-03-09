@@ -12,7 +12,8 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 from pathlib import Path
 import os
 
-BASE_DIR = Path(__file__).resolve().parent.parent
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+# BASE_DIR = Path(__file__).resolve().parent.parent
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 # BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # TEMPLATE_DIR = os.path.join(BASE_DIR,'templates')
@@ -26,7 +27,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = '%)bf8!6=yri%+h(*0&(wy)@d^%c3=c%gt%4=hx!!=hb8#+s5=5'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['139.59.128.54']
 
@@ -62,7 +63,8 @@ ROOT_URLCONF = 'onlinexam.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR/'templates'],
+        # 'DIRS': [BASE_DIR/'templates'],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -132,15 +134,19 @@ USE_I18N = True
 
 USE_L10N = True
 
+USE_TZ = True
+
 STATIC_URL = '/static/'
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
 # STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
 # STATIC_ROOT = BASE_DIR / 'staticfiles'
 # STATICFILES_DIRS=[
 #     BASE_DIR/"static"
 # ]
 
-STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+# STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 
 LOGIN_REDIRECT_URL='/afterlogin'
 LOGOUT_REDIRECT_URL = '/'
