@@ -26,9 +26,10 @@ STATIC_DIR=os.path.join(BASE_DIR,'static')
 SECRET_KEY = '%)bf8!6=yri%+h(*0&(wy)@d^%c3=c%gt%4=hx!!=hb8#+s5=5'
 
 # SECURITY WARNING: don't run with debug turned on in production!
+
 DEBUG = False
 
-ALLOWED_HOSTS = ['139.59.128.54']
+ALLOWED_HOSTS = ['127.0.0.1','139.59.128.54']
 
 
 # Application definition
@@ -84,11 +85,11 @@ WSGI_APPLICATION = 'onlinexam.wsgi.application'
 
 # if DEBUG:
 #     DATABASES = {
-#         'default': {
-#             'ENGINE': 'django.db.backends.sqlite3',
-#             'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+#             'default': {
+#                 'ENGINE': 'django.db.backends.sqlite3',
+#                 'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+#             }
 #         }
-#     }
 
 DATABASES = {
     'default': {
