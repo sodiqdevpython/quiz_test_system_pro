@@ -28,7 +28,7 @@ SECRET_KEY = '%)bf8!6=yri%+h(*0&(wy)@d^%c3=c%gt%4=hx!!=hb8#+s5=5'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['207.154.246.154']
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -126,10 +126,13 @@ USE_L10N = True
 
 STATIC_URL = '/static/'
 # STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
-STATIC_ROOT = BASE_DIR / 'staticfiles'
-STATICFILES_DIRS=[
-    BASE_DIR/"static"
-]
+# STATIC_ROOT = BASE_DIR / 'staticfiles'
+# STATICFILES_DIRS=[
+#     BASE_DIR/"static"
+# ]
+
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 LOGIN_REDIRECT_URL='/afterlogin'
 LOGOUT_REDIRECT_URL = '/'
