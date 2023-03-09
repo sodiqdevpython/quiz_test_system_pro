@@ -27,8 +27,7 @@ SECRET_KEY = '%)bf8!6=yri%+h(*0&(wy)@d^%c3=c%gt%4=hx!!=hb8#+s5=5'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 
-# DEBUG = False
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['127.0.0.1','139.59.128.54']
 
@@ -85,23 +84,23 @@ WSGI_APPLICATION = 'onlinexam.wsgi.application'
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
 # if DEBUG:
-DATABASES = {
-            'default': {
-                'ENGINE': 'django.db.backends.sqlite3',
-                'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-            }
-        }
-
 # DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-#         'NAME': 'blogdb',
-#         'USER': 'blog_admin',
-#         'PASSWORD': 'testing123',
-#         'HOST': 'localhost',
-#         'PORT': '',
-#     }
-# }
+#             'default': {
+#                 'ENGINE': 'django.db.backends.sqlite3',
+#                 'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+#             }
+#         }
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'blogdb',
+        'USER': 'blog_admin',
+        'PASSWORD': 'testing123',
+        'HOST': 'localhost',
+        'PORT': '',
+    }
+}
 
 
 
