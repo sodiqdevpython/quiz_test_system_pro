@@ -81,12 +81,20 @@ WSGI_APPLICATION = 'onlinexam.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
-DATABASES = {
+if DEBUG:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        }
+    }
+else:
+    DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'namuna',
-        'USER': 'sodiq',
-        'PASSWORD': 'sodiq',
+        'NAME': 'blogDB',
+        'USER': 'blog_admin',
+        'PASSWORD': 'testing123',
         'HOST': 'localhost',
         'PORT': '',
     }
@@ -130,6 +138,7 @@ STATIC_URL = '/static/'
 # STATICFILES_DIRS=[
 #     BASE_DIR/"static"
 # ]
+
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
