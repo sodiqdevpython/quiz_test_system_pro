@@ -84,23 +84,23 @@ WSGI_APPLICATION = 'onlinexam.wsgi.application'
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
 # if DEBUG:
-DATABASES = {
-            'default': {
-                'ENGINE': 'django.db.backends.sqlite3',
-                'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-            }
-        }
-
 # DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-#         'NAME': 'blogdb',
-#         'USER': 'blog_admin',
-#         'PASSWORD': 'testing123',
-#         'HOST': 'localhost',
-#         'PORT': '',
-#     }
-# }
+#             'default': {
+#                 'ENGINE': 'django.db.backends.sqlite3',
+#                 'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+#             }
+#         }
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'blogdb',
+        'USER': 'blog_admin',
+        'PASSWORD': 'testing123',
+        'HOST': 'localhost',
+        'PORT': '',
+    }
+}
 
 
 
@@ -143,9 +143,7 @@ STATICFILES_DIRS = [str(BASE_DIR.joinpath('static'))]
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')             
 # STATICFILES_DIRS=[
 #     BASE_DIR/"static"
-# ]
-MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'static')                    
+# ]                
 # STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 
 LOGIN_REDIRECT_URL='/afterlogin'
